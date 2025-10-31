@@ -10,13 +10,13 @@ class App {
     MissionUtils.Console.print(`${uesrLottoTryChance}개를 구매했습니다.`);
 
     const userLottoNumber = LottoNumber(uesrLottoTryChance); // 로또 번호가 담긴 새로운 배열
-
     userLottoNumber.forEach((ticket) => {
       MissionUtils.Console.print(`[${ticket.lottoNumber}]`);
     });
 
     const winningNumber = await inputWinningNumber();
     // MissionUtils.Console.print(`[당첨번호 : ${winningNumber.lottoNumber}]`);
+    MissionUtils.Console.print(`[${winningNumber[1]}]`);
   }
 }
 

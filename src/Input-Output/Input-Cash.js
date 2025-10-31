@@ -7,6 +7,4 @@ async function InputUserCash() {
   return InputCash;
 }
 
-// 천원 단위로 나눠지지 않는다면
-
 export default InputUserCash;
