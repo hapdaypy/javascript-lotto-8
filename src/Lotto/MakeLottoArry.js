@@ -6,8 +6,9 @@ function MakeLottoArry(uesrLottoTryChance) {
   for (let index = 0; index < uesrLottoTryChance; index++) {
     const number = MakeRandomVariable();
     number.sort((a, b) => a - b);
-
-    lottoTikets.push(number);
+    const input = new Lotto(number);
+    lottoTikets.push(input);
+    // console.log(input);
   }
 
   return lottoTikets;
