@@ -3,6 +3,7 @@ import InputCash from "./Input-Output/Input-Cash.js";
 import CaculateTryChance from "./Caculate/Caculate-TryNumber.js";
 import LottoNumber from "./Lotto/MakeLottoArry.js";
 import inputWinningNumber from "./Input-Output/Input-WinningNumber.js";
+import caculateNumberOfMatch from "./Caculate/Caculate-NumberOfMatched.js";
 class App {
   async run() {
     const userCash = await InputCash();
@@ -14,9 +15,12 @@ class App {
       MissionUtils.Console.print(`[${ticket.lottoNumber}]`);
     });
 
-    const winningNumber = await inputWinningNumber();
-    // MissionUtils.Console.print(`[당첨번호 : ${winningNumber.lottoNumber}]`);
-    MissionUtils.Console.print(`[${winningNumber[1]}]`);
+    const winningNumber = await inputWinningNumber(); // 로또 번호와 보너스 번호를 입력 받음
+    const caluatedUserGetCash = caculateNumberOfMatch(
+      uesrLottoTryChance,
+      userLottoNumber,
+      winningNumber
+    );
   }
 }
 
