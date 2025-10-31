@@ -24,8 +24,8 @@ class App {
       winningNumber
     );
 
-    caluatedUserGetCash.forEach((ticket) => {
-      MissionUtils.Console.print(`[${ticket}]`);
+    caluatedUserGetCash.forEach((item) => {
+      MissionUtils.Console.print(`[${item}]`);
     });
   }
 }
