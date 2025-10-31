@@ -4,6 +4,7 @@ import CaculateTryChance from "./Caculate/Caculate-TryNumber.js";
 import LottoNumber from "./Lotto/MakeLottoArry.js";
 import inputWinningNumber from "./Input-Output/Input-WinningNumber.js";
 import caculateNumberOfMatch from "./Caculate/Caculate-NumberOfMatched.js";
+
 class App {
   async run() {
     const userCash = await InputCash();
