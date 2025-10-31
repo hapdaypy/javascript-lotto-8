@@ -12,11 +12,11 @@ class App {
     const userLottoNumber = LottoNumber(uesrLottoTryChance); // 로또 번호가 담긴 새로운 배열
 
     userLottoNumber.forEach((ticket) => {
-      const numbers = ticket;
-      MissionUtils.Console.print(`[${numbers.join(", ")}]`);
+      MissionUtils.Console.print(`[${ticket.lottoNumber}]`);
     });
 
-    const winningNunber = inputWinningNumber();
+    const winningNumber = await inputWinningNumber();
+    // MissionUtils.Console.print(`[당첨번호 : ${winningNumber.lottoNumber}]`);
   }
 }
 
