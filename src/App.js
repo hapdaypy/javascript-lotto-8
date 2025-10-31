@@ -16,11 +16,17 @@ class App {
     });
 
     const winningNumber = await inputWinningNumber(); // 로또 번호와 보너스 번호를 입력 받음
+
     const caluatedUserGetCash = caculateNumberOfMatch(
+      // 수익률을 계산하기 위한
       uesrLottoTryChance,
       userLottoNumber,
       winningNumber
     );
+
+    caluatedUserGetCash.forEach((ticket) => {
+      MissionUtils.Console.print(`[${ticket}]`);
+    });
   }
 }
 
