@@ -4,9 +4,13 @@ function ValidateInputNumber(inputNumber) {
     throw new Error("[ERROR] 당첨 번호에는 숫자만 있어야 합니다.");
   if (inputNumber.at(0) == "," || inputNumber.at(-1) == ",")
     throw new Error("[ERROR] 당첨 번호에는 처음 또는 끝에 ,(콤마)가 있습니다.");
+  if (inputNumber.includes(" "))
+    throw new Error("[ERROR] 당첨 번호에 공백이 존재합니다.");
 
   return inputNumber;
 }
+
+function findLetter(inputNumber) {}
 
 /*
 1. 당첨 번호 앞 뒤에 , 로 나 끝나면 안 됨
