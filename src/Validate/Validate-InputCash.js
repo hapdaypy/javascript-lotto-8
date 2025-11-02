@@ -9,5 +9,6 @@ function validateInputCash(inputCash) {
   else if (inputCash % 1000 != 0)
     throw new Error("[ERROR] 구입금액이 천원으로 나누어 떨어지지 않습니다.");
 }
+// if 문이 과연 정답일까 ?
 
 export default validateInputCash;
