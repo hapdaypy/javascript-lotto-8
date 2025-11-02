@@ -1,5 +1,5 @@
 function validateInputCash(inputCash) {
-  const numberOnlyRegex = /^[0-9]++$/;
+  const numberOnlyRegex = /^[0-9]+$/;
   const standardCash = 1000;
   const zero = 0;
   if (!numberOnlyRegex.test(inputCash)) {
