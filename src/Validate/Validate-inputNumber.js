@@ -1,4 +1,5 @@
 function ValidateInputNumber(inputNumber) {
+  const lotoInputSize = 6;
   if (inputNumber.includes(" ")) {
     throw new Error("[ERROR] 당첨 번호에 공백이 존재합니다.");
   }
@@ -9,7 +10,7 @@ function ValidateInputNumber(inputNumber) {
 
   const numbers = inputNumber.split(",");
 
-  if (numbers.length !== 6) {
+  if (numbers.length !== lotoInputSize) {
     throw new Error("[ERROR] 당첨 번호는 6자리여야 합니다.");
   }
 

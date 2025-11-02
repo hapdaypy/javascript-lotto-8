@@ -1,13 +1,20 @@
 function validateInputCash(inputCash) {
-  const hasNonNumeric = inputCash.split("").some((char) => isNaN(char));
-  if (hasNonNumeric == true)
-    throw new Error("[ERROR] 구입금액에 문자가 포함되어 있습니다.");
-  else if (isNaN(inputCash) == true)
-    throw new Error("[ERROR] 구입금액이 숫자가 아닙니다.");
-  else if (inputCash < 1000)
-    throw new Error("[ERROR] 구입금액은 천원보다 큰 수여야 합니다.");
-  else if (inputCash % 1000 != 0)
-    throw new Error("[ERROR] 구입금액이 천원으로 나누어 떨어지지 않습니다.");
+  const numberOnlyRegex = /^[0-9]++$/;
+  const standardCash = 1000;
+  const zero = 0;
+  if (!numberOnlyRegex.test(inputCash)) {
+    throw new Error(
+      "[ERROR] 구입은 공백, 문자, 소주점 없이 오직 숫자만 입력되야 합니다."
+    );
+  }
+  const cashAmout = Number(inputCash);
+  if (cashAmout < standardCash) {
+    throw new Error("[ERROR] 구입 금액은 1,000원 이상이여야 합니다.");
+  }
+  if (cashAmout % standardCash !== zero) {
+    throw new Error("[ERROR] 구입 금액은 1,000원 단위여야 합니다.");
+  }
+  return cashAmout;
 }
 // if 문이 과연 정답일까 ?
 
