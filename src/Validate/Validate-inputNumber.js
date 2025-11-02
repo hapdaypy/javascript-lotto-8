@@ -1,5 +1,8 @@
 function ValidateInputNumber(inputNumber) {
   const hasNonNumeric = inputNumber.split(",").some((char) => isNaN(char));
+  if (splitLottoNumber() > 5)
+    throw new Error("[ERROR] 당첨 번호는 6자리여야 합니다.");
+
   if (hasNonNumeric == true)
     throw new Error("[ERROR] 당첨 번호에는 숫자만 있어야 합니다.");
   if (inputNumber.at(0) == "," || inputNumber.at(-1) == ",")
@@ -7,10 +10,15 @@ function ValidateInputNumber(inputNumber) {
   if (inputNumber.includes(" "))
     throw new Error("[ERROR] 당첨 번호에 공백이 존재합니다.");
 
+  c;
+
   return inputNumber;
 }
 
-function findLetter(inputNumber) {}
+function splitLottoNumber(inputNumber) {
+  const splitLotto = inputNumber.split(",");
+  return (lottoNumberLength = splitLotto.length);
+}
 
 /*
 1. 당첨 번호 앞 뒤에 , 로 나 끝나면 안 됨
