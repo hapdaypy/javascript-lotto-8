@@ -6,7 +6,7 @@ function ValidateInputBonusNumber(inputNumber) {
 
   if (!numberOnlyRegex.test(inputNumber)) {
     throw new Error(
-      "[ERROR] 보너스 번호에 공백,수자를 제외한 문자가 있으면 안 됩니다."
+      "[ERROR] 보너스 번호에 공백,숫자를 제외한 문자가 있으면 안 됩니다."
     );
   }
   const bonusNumber = Number(inputNumber);
