@@ -10,17 +10,18 @@ import printUserLottoNumber from "./Input-Output/Output-userLottoNumber.js";
 
 class App {
   async run() {
-    const userCash = await InputCash();
-    const uesrLottoTryChance = CaculateTryChance(userCash);
+    const userCash = await InputCash(); // 사용자 금액 입력
+
+    const uesrLottoTryChance = CaculateTryChance(userCash); // 금액에 따른 랜덤 로또 가질 수 있는 개수
     MissionUtils.Console.print(`${uesrLottoTryChance}개를 구매했습니다.`);
 
-    const userLottoNumber = LottoNumber(uesrLottoTryChance); // 로또 번호가 담긴 새로운 배열
-
+    const userLottoNumber = LottoNumber(uesrLottoTryChance); // 랜덤 로또 번호가 담긴 새로운 배열
     printUserLottoNumber(userLottoNumber);
 
-    const winningNumber = await inputWinningNumber(); // 로또 번호와 보너스 번호를 입력 받음
+    const winningNumber = await inputWinningNumber(); // 로또 번호와 보너스 번호를 입력
+
     const caluatedUserGetCash = caculateNumberOfMatch(
-      // 수익률을 계산하기 위한
+      // 수익률을 계산
       uesrLottoTryChance,
       userLottoNumber,
       winningNumber
@@ -29,6 +30,7 @@ class App {
     printUserCashRecord(caluatedUserGetCash);
 
     const solution = caculateProfit(caluatedUserGetCash, userCash);
+
     MissionUtils.Console.print(solution);
   }
 }
