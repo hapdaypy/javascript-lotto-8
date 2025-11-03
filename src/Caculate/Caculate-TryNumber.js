@@ -1,10 +1,16 @@
+CACULATION_TOOL = {
+  ZERO: 0,
+  ONETHOUSAN: 1000,
+  ONE: 1,
+};
+
 function CaculateTryChance(userCash) {
   let CopyUserCash = userCash;
-  let userTryChance = 0;
+  let userTryChance = ZERO;
 
-  while (CopyUserCash > 0) {
-    userTryChance += 1;
-    CopyUserCash -= 1000;
+  while (CopyUserCash > ZERO) {
+    userTryChance += ONE;
+    CopyUserCash -= ONETHOUSAN;
   }
   return userTryChance;
 }
