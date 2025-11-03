@@ -1,4 +1,4 @@
-function CaculateTryChance(userCash) {
+function CalculateTryChance(userCash) {
   const CACULATION_TOOL = {
     ZERO: 0,
     ONETHOUSAN: 1000,
@@ -15,4 +15,4 @@ function CaculateTryChance(userCash) {
   return userTryChance;
 }
 
-export default CaculateTryChance;
+export default CalculateTryChance;
