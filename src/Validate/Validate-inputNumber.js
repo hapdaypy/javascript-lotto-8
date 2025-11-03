@@ -5,7 +5,7 @@ function ValidateInputNumber(inputNumber) {
   const numberOnlyRegex = /^[0-9,]+$/;
 
   vadidateInputNumberFrame(inputNumber, numberOnlyRegex);
-  const numbers = inputNumber.split(",");
+  const numbers = inputNumber.split(","); // 함수를 나누는 기준
   validateInputNumberComponent(numbers, STRAT, END, lottoInputSize);
 
   return inputNumber;

@@ -1,7 +1,6 @@
 function ValidateInputBonusNumber(inputNumber) {
   const START = 1;
   const END = 45;
-
   const numberOnlyRegex = /^[0-9]+$/;
 
   if (!numberOnlyRegex.test(inputNumber)) {

@@ -4,27 +4,33 @@ import ValiadateBonseNuber from "../Validate/Validate-InputBonus.js";
 import Lotto from "../Lotto/Lotto.js";
 
 async function InputLottoAndBonusNumber() {
-  const WinningNumber = await Console.readLineAsync(
-    "\n당첨 번호를 입력해 주세요.\n"
-  );
-  const inputWinningNumber = [];
+  while (true) {
+    try {
+      const WinningNumber = await Console.readLineAsync(
+        "\n당첨 번호를 입력해 주세요.\n"
+      );
+      const inputWinningNumber = [];
 
-  ValidateInputWinningNumber(WinningNumber);
+      ValidateInputWinningNumber(WinningNumber);
 
-  const stringArray = WinningNumber.split(",");
-  const WinningNumberArray = stringArray.map(Number);
+      const stringArray = WinningNumber.split(",");
+      const WinningNumberArray = stringArray.map(Number);
 
-  inputWinningNumber.push(new Lotto(WinningNumberArray));
+      inputWinningNumber.push(new Lotto(WinningNumberArray));
 
-  const bonusNumber = await Console.readLineAsync(
-    "\n보너스 번호를 입력해 주세요.\n"
-  );
+      const bonusNumber = await Console.readLineAsync(
+        "\n보너스 번호를 입력해 주세요.\n"
+      );
 
-  ValiadateBonseNuber(bonusNumber);
+      ValiadateBonseNuber(bonusNumber);
 
-  inputWinningNumber.push(bonusNumber);
+      inputWinningNumber.push(bonusNumber);
 
-  return inputWinningNumber;
+      return inputWinningNumber;
+    } catch {
+      error.message;
+    }
+  }
 }
 
 export default InputLottoAndBonusNumber;
