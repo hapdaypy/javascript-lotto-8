@@ -20,27 +20,6 @@ const LOTTO_IMPORMATION = {
   TOTAL_RANK: 5,
 };
 
-function getRank(userLottoNumberArray, userCorrecNumber, bonusNumberRead) {
-  if (userCorrecNumber < LOTTO_IMPORMATION.Min_Mathch) return null;
-  if (userCorrecNumber === LOTTO_IMPORMATION.TREE)
-    // 5등
-    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FIFTH;
-  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.FOUR)
-    // 4등
-    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FOURTH;
-  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.SIX)
-    // 1등 6개 맞춤
-    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FIRST;
-  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.FIVE) {
-    const hasBounus = userLottoNumberArray.includes(bonusNumberRead);
-    if (hasBounus) {
-      return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.SECOND;
-    }
-    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.THIRTH;
-  }
-  return null;
-}
-
 function CaculateUseWrGetCash(tryNumber, userLottoNumber, winningNumber) {
   let caculatedGetUserCash = new Array(5).fill(0);
   const winningNumberRead = winningNumber[0].lottoNumber; // 0에는 로또 정답이 들어있음
@@ -62,10 +41,30 @@ function CaculateUseWrGetCash(tryNumber, userLottoNumber, winningNumber) {
   return caculatedGetUserCash;
 }
 
+function getRank(userLottoNumberArray, userCorrecNumber, bonusNumberRead) {
+  if (userCorrecNumber < LOTTO_IMPORMATION.Min_Mathch) return null;
+
+  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.TREE)
+    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FIFTH; // 5등
+  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.FOUR)
+    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FOURTH; // 4등
+  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.SIX)
+    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FIRST; // 1등
+  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.FIVE) {
+    const hasBounus = userLottoNumberArray.includes(bonusNumberRead);
+    if (hasBounus) {
+      return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.SECOND; //2등
+    }
+    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.THIRTH; //3등
+  }
+  return null;
+}
+
 function matchNumber(userLottoNumber, winningNumber) {
   let set2 = new Set(userLottoNumber);
   let commonElements = winningNumber.filter((item) => set2.has(item));
   const correctNumber = commonElements.length;
+
   return correctNumber;
 }
 
