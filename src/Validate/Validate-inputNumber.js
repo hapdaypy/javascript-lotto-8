@@ -10,11 +10,13 @@ function ValidateInputNumber(inputNumber) {
   if (inputNumber.startsWith(",") || inputNumber.endsWith(",")) {
     throw new Error("[ERROR] 당첨 번호에는 처음 또는 끝에 ,(콤마)가 있습니다.");
   }
+  if (!numberOnlyRegex.test(inputNumber)) {
+    throw new Error("[ERROR] 당첨 번호에 , 이외의 문자가 있을 수 없습니다.");
+  }
 
   const numbers = inputNumber.split(",");
-
   if (numbers.length !== lottoInputSize) {
-    throw new Error("[ERROR] 당첨 번호는 6자리여야 합니다.");
+    throw new Error(`[ERROR] 당첨 번호는 ${lottoInputSize}자리여야 합니다.`);
   }
 
   for (const numStr of numbers) {
@@ -24,9 +26,7 @@ function ValidateInputNumber(inputNumber) {
       );
     }
   }
-  if (!numberOnlyRegex.test(inputNumber)) {
-    throw new Error("[ERROR] 당첨 번호에 , 이외의 문자가 있을 수 없습니다.");
-  }
+
   if (hasDuplicates(numbers) == true)
     throw new Error("[ERROR] 당첨 번호에 중복되는 숫자가 있습니다.");
 
