@@ -2,14 +2,14 @@
 // 5등이면 0에 저장되고 4등이면 1에 저장되는식임
 // 값을 하드코딩하면 안 됨
 
-const lotto_inpormantion = {
-  Match_Counter: {
+const LOTTO_IMPORMATION = {
+  MATHCH_COUNTER: {
     TREE: 3,
     FOUR: 4,
     FIVE: 5,
     SIX: 6,
   },
-  Lotto_Rankin_Index: {
+  LOTTO_RANKING_INDEX: {
     FIFTH: 0, // 5등
     FOURTH: 1,
     THIRTH: 2,
@@ -17,34 +17,34 @@ const lotto_inpormantion = {
     FIRST: 4, // 1등
   },
   Min_Mathch: 3,
-  Total_Rank: 5,
+  TOTAL_RANK: 5,
 };
 
 function getRank(userLottoNumberArray, userCorrecNumber, bonusNumberRead) {
-  if (userCorrecNumber < lotto_inpormantion.Min_Mathch) return null;
-  if (userCorrecNumber === lotto_inpormantion.TREE)
+  if (userCorrecNumber < LOTTO_IMPORMATION.Min_Mathch) return null;
+  if (userCorrecNumber === LOTTO_IMPORMATION.TREE)
     // 5등
-    return lotto_inpormantion.Lotto_Rankin_Index.FIFTH;
-  if (userCorrecNumber === lotto_inpormantion.Match_Counter.FOUR)
+    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FIFTH;
+  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.FOUR)
     // 4등
-    return lotto_inpormantion.Lotto_Rankin_Index.FOURTH;
-  if (userCorrecNumber === lotto_inpormantion.Match_Counter.SIX)
+    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FOURTH;
+  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.SIX)
     // 1등 6개 맞춤
-    return lotto_inpormantion.Lotto_Rankin_Index.FIRST;
-  if (userCorrecNumber === lotto_inpormantion.Match_Counter.FIVE) {
+    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FIRST;
+  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.FIVE) {
     const hasBounus = userLottoNumberArray.includes(bonusNumberRead);
     if (hasBounus) {
-      return lotto_inpormantion.Lotto_Rankin_Index.SECOND;
+      return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.SECOND;
     }
-    return lotto_inpormantion.Lotto_Rankin_Index.THIRTH;
+    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.THIRTH;
   }
   return null;
 }
 
 function CaculateUseWrGetCash(tryNumber, userLottoNumber, winningNumber) {
   let caculatedGetUserCash = new Array(5).fill(0);
-  const winningNumberRead = winningNumber[0].lottoNumber;
-  const bonusNumberRead = Number(winningNumber[1]);
+  const winningNumberRead = winningNumber[0].lottoNumber; // 0에는 로또 정답이 들어있음
+  const bonusNumberRead = Number(winningNumber[1]); // 1에는 보너스 번호가 담겨져 았음
 
   for (let index = 0; index < tryNumber; index++) {
     const userLottoArray = userLottoNumber[index].lottoNumber;
