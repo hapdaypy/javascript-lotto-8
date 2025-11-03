@@ -13,7 +13,7 @@ class App {
     const userCash = await InputCash(); // 사용자 금액 입력
 
     const uesrLottoTryChance = CaculateTryChance(userCash); // 금액에 따른 랜덤 로또 가질 수 있는 개수
-    MissionUtils.Console.print(`${uesrLottoTryChance}개를 구매했습니다.`);
+    MissionUtils.Console.print(`\n${uesrLottoTryChance}개를 구매했습니다.`);
 
     const userLottoNumber = LottoNumber(uesrLottoTryChance); // 랜덤 로또 번호가 담긴 새로운 배열
     printUserLottoNumber(userLottoNumber);
