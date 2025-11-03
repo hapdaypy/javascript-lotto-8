@@ -1,5 +1,8 @@
 function ValidateInputNumber(inputNumber) {
   const lottoInputSize = 6;
+
+  const numberOnlyRegex = /^[0-9,]+$/;
+
   if (inputNumber.includes(" ")) {
     throw new Error("[ERROR] 당첨 번호에 공백이 존재합니다.");
   }
@@ -20,6 +23,9 @@ function ValidateInputNumber(inputNumber) {
         "[ERROR] 당첨 번호에는 숫자만 있어야 하며, 콤마(,)가 연속될 수 없습니다."
       );
     }
+  }
+  if (!numberOnlyRegex.test(inputNumber)) {
+    throw new Error("[ERROR] 당첨 번호에 , 이외의 문자가 있을 수 없습니다.");
   }
 
   return inputNumber;
