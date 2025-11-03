@@ -1,5 +1,5 @@
 import { Console } from "@woowacourse/mission-utils";
-import ValidateInputCash from "../Validate/validateInputCash.js";
+import ValidateInputCash from "../validate/validateInputCash.js";
 
 async function InputUserCash() {
   while (true) {
