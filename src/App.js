@@ -31,7 +31,7 @@ class App {
 
     const solution = caculateProfit(caluatedUserGetCash, userCash);
 
-    MissionUtils.Console.print(solution);
+    MissionUtils.Console.print(`총 수익률은 ${solution}%입니다.\n`);
   }
 }
 
