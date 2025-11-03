@@ -1,6 +1,6 @@
 function ValidateInputBonusNumber(inputNumber) {
-  const start = 1;
-  const end = 45;
+  const START = 1;
+  const END = 45;
 
   const numberOnlyRegex = /^[0-9]+$/;
 
@@ -10,7 +10,7 @@ function ValidateInputBonusNumber(inputNumber) {
     );
   }
   const bonusNumber = Number(inputNumber);
-  if (start > bonusNumber || end < bonusNumber) {
+  if (START > bonusNumber || END < bonusNumber) {
     throw new Error("[ERROR] 보너스 번호가 1부터 46사이의 수여야 합니다.");
   }
 
