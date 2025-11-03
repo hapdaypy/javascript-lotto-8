@@ -1,11 +1,11 @@
 function caculateTotalRetun(caluatedUserGetCash, userCash) {
   const prizes = [5000, 50000, 1500000, 30000000, 2000000000];
-  const hundred = 100;
-
+  const HUNDRED = 100;
+  const ZERO = 0;
   let totalSum = sumUserCash(caluatedUserGetCash, prizes);
-  if (totalSum === 0) return "0.0";
+  if (totalSum === ZERO) return "0.0";
 
-  const rate = (totalSum / userCash) * hundred;
+  const rate = (totalSum / userCash) * HUNDRED;
 
   return rate.toFixed(1);
 }
