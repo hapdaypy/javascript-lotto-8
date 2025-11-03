@@ -15,6 +15,13 @@ function ValidateInputNumber(inputNumber) {
     throw new Error("[ERROR] 당첨 번호에 , 이외의 문자가 있을 수 없습니다.");
   }
   const numbers = inputNumber.split(",");
+  for (const numStr of numbers) {
+    if (isNaN(numStr) || numStr === "") {
+      throw new Error(
+        "[ERROR] 당첨 번호에는 숫자만 있어야 하며, 콤마(,)가 연속될 수 없습니다."
+      );
+    }
+  }
 
   for (let index = 0; index < numbers.length; index++) {
     const num = Number(numbers[index]);
@@ -25,14 +32,6 @@ function ValidateInputNumber(inputNumber) {
 
   if (numbers.length !== lottoInputSize) {
     throw new Error(`[ERROR] 당첨 번호는 ${lottoInputSize}자리여야 합니다.`);
-  }
-
-  for (const numStr of numbers) {
-    if (isNaN(numStr) || numStr === "") {
-      throw new Error(
-        "[ERROR] 당첨 번호에는 숫자만 있어야 하며, 콤마(,)가 연속될 수 없습니다."
-      );
-    }
   }
 
   if (hasDuplicates(numbers) == true)
