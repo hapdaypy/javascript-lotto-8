@@ -17,7 +17,6 @@ async function InputLottoAndBonusNumber() {
       const WinningNumberArray = stringArray.map(Number);
 
       inputWinningNumber.push(new Lotto(WinningNumberArray));
-
       const bonusNumber = await Console.readLineAsync(
         "\n보너스 번호를 입력해 주세요.\n"
       );
@@ -27,8 +26,8 @@ async function InputLottoAndBonusNumber() {
       inputWinningNumber.push(bonusNumber);
 
       return inputWinningNumber;
-    } catch {
-      error.message;
+    } catch (error) {
+      Console.print(error.message);
     }
   }
 }
