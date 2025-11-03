@@ -2,9 +2,10 @@ function validateInputCash(inputCash) {
   const numberOnlyRegex = /^[0-9]+$/;
   const standardCash = 1000;
   const zero = 0;
+
   if (!numberOnlyRegex.test(inputCash)) {
     throw new Error(
-      "[ERROR] 구입은 공백, 문자, 소주점 없이 오직 숫자만 입력되야 합니다."
+      "[ERROR] 구입 금액은 공백, 문자, 소수점 없이 오직 숫자만 입력되야 합니다."
     );
   }
   const cashAmout = Number(inputCash);
@@ -16,6 +17,5 @@ function validateInputCash(inputCash) {
   }
   return cashAmout;
 }
-// if 문이 과연 정답일까 ?
 
 export default validateInputCash;
