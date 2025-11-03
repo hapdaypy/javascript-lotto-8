@@ -1,4 +1,4 @@
-function caculateTotalRetun(caluatedUserGetCash, userCash) {
+function calculateTotalReturn(caluatedUserGetCash, userCash) {
   const prizes = [5000, 50000, 1500000, 30000000, 2000000000];
   const HUNDRED = 100;
   const ZERO = 0;
@@ -17,4 +17,4 @@ function sumUserCash(caluatedUserGetCash, prizes) {
   }
   return sum;
 }
-export default caculateTotalRetun;
+export default calculateTotalReturn;
