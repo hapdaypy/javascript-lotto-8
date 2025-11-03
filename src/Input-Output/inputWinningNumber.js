@@ -1,7 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
-import ValidateInputWinningNumber from "../Validate/validateInputNumber.js";
-import ValiadateBonseNuber from "../Validate/validateInputBonus.js";
-import Lotto from "../Lotto/Lotto.js";
+import useValidateInputWinningNumber from "../validate/validateInputNumber.js";
+import useValidateBonusNumber from "../validate/validateInputBonus.js";
+import Lotto from "../makelotto/Lotto.js";
 
 async function InputLottoAndBonusNumber() {
   while (true) {
@@ -11,7 +11,7 @@ async function InputLottoAndBonusNumber() {
       );
       const inputWinningNumber = [];
 
-      ValidateInputWinningNumber(WinningNumber);
+      useValidateInputWinningNumber(WinningNumber);
 
       const stringArray = WinningNumber.split(",");
       const WinningNumberArray = stringArray.map(Number);
@@ -21,7 +21,7 @@ async function InputLottoAndBonusNumber() {
         "\n보너스 번호를 입력해 주세요.\n"
       );
 
-      ValiadateBonseNuber(bonusNumber);
+      useValidateBonusNumber(bonusNumber);
 
       inputWinningNumber.push(bonusNumber);
 

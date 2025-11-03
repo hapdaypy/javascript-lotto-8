@@ -19,7 +19,7 @@ const LOTTO_IMPORMATION = {
 function CaculateUseWrGetCash(tryNumber, userLottoNumber, winningNumber) {
   let caculatedGetUserCash = new Array(5).fill(0);
   const winningNumberRead = winningNumber[0].lottoNumber; // 0에는 로또 정답이 들어있음
-  const bonusNumberRead = Number(winningNumber[1]); // 1에는 보너스 번호가 담겨져 았음
+  const bonusNumberRead = Number(winningNumber[1]); // 1에는 보너스 번호가 담겨져 았  음
 
   for (let index = 0; index < tryNumber; index++) {
     const userLottoArray = userLottoNumber[index].lottoNumber;

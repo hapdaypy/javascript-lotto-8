@@ -1,12 +1,12 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
-import InputCash from "./Input-Output/inputCash.js";
-import CaculateTryChance from "./Caculate/caculateTryNumber.js";
+import InputCash from "./input-output/inputCash.js";
+import CaculateTryChance from "./calculate/caculateTryNumber.js";
 import LottoNumber from "./Lotto/makeInputLottoAarry.js";
-import inputWinningNumber from "./Input-Output/inputWinningNumber.js";
-import caculateNumberOfMatch from "./Caculate/caculateNumberOfMatched.js";
-import caculateProfit from "./Caculate/caculateTotalReturn.js";
-import printUserCashRecord from "./Input-Output/outPutUserCash.js";
-import printUserLottoNumber from "./Input-Output/outputUserLottoNumber.js";
+import inputWinningNumber from "./input-output/inputWinningNumber.js";
+import caculateNumberOfMatch from "./calculate/caculateNumberOfMatched.js";
+import caculateProfit from "./calculate/caculateTotalReturn.js";
+import printUserCashRecord from "./input-output/outPutUserCash.js";
+import printUserLottoNumber from "./input-output/outputUserLottoNumber.js";
 
 class App {
   async run() {
