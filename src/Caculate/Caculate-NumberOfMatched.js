@@ -4,7 +4,7 @@
 
 const LOTTO_IMPORMATION = {
   MATHCH_COUNTER: {
-    TREE: 3,
+    THREE: 3,
     FOUR: 4,
     FIVE: 5,
     SIX: 6,
@@ -12,7 +12,7 @@ const LOTTO_IMPORMATION = {
   LOTTO_RANKING_INDEX: {
     FIFTH: 0, // 5등
     FOURTH: 1,
-    THIRTH: 2,
+    THIRD: 2,
     SECOND: 3,
     FIRST: 4, // 1등
   },
@@ -44,7 +44,7 @@ function CaculateUseWrGetCash(tryNumber, userLottoNumber, winningNumber) {
 function getRank(userLottoNumberArray, userCorrecNumber, bonusNumberRead) {
   if (userCorrecNumber < LOTTO_IMPORMATION.Min_Mathch) return null;
 
-  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.TREE)
+  if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.THREE)
     return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FIFTH; // 5등
   if (userCorrecNumber === LOTTO_IMPORMATION.MATHCH_COUNTER.FOUR)
     return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.FOURTH; // 4등
@@ -55,7 +55,7 @@ function getRank(userLottoNumberArray, userCorrecNumber, bonusNumberRead) {
     if (hasBounus) {
       return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.SECOND; //2등
     }
-    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.THIRTH; //3등
+    return LOTTO_IMPORMATION.LOTTO_RANKING_INDEX.THIRD; //3등
   }
   return null;
 }
