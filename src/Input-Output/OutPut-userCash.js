@@ -1,7 +1,7 @@
 import { MissionUtils } from "@woowacourse/mission-utils";
 function outPutUserCashRecord(caluatedUserGetCash) {
   const outputLines = [
-    "당첨 통계",
+    "\n당첨 통계",
     "---",
     `3개 일치 (5,000원) - ${caluatedUserGetCash[0]}개`,
     `4개 일치 (50,000원) - ${caluatedUserGetCash[1]}개`,
