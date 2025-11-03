@@ -1,6 +1,7 @@
 function ValidateInputNumber(inputNumber) {
   const lottoInputSize = 6;
-
+  const STRAT = 1;
+  const END = 45;
   const numberOnlyRegex = /^[0-9,]+$/;
 
   if (inputNumber.includes(" ")) {
@@ -13,8 +14,15 @@ function ValidateInputNumber(inputNumber) {
   if (!numberOnlyRegex.test(inputNumber)) {
     throw new Error("[ERROR] 당첨 번호에 , 이외의 문자가 있을 수 없습니다.");
   }
-
   const numbers = inputNumber.split(",");
+
+  for (let index = 0; index < numbers.length; index++) {
+    const num = Number(numbers[index]);
+
+    if (num < STRAT || num > END)
+      throw new Error("[ERROR] 당첨 번호는 1부터 45까지 정수여야 합니다.");
+  }
+
   if (numbers.length !== lottoInputSize) {
     throw new Error(`[ERROR] 당첨 번호는 ${lottoInputSize}자리여야 합니다.`);
   }
