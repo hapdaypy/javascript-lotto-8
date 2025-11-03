@@ -27,8 +27,14 @@ function ValidateInputNumber(inputNumber) {
   if (!numberOnlyRegex.test(inputNumber)) {
     throw new Error("[ERROR] 당첨 번호에 , 이외의 문자가 있을 수 없습니다.");
   }
+  if (hasDuplicates(numbers) == true)
+    throw new Error("[ERROR] 당첨 번호에 중복되는 숫자가 있습니다.");
 
   return inputNumber;
 }
 
+function hasDuplicates(arr) {
+  const uniqueElements = new Set(arr);
+  return arr.length !== uniqueElements.size;
+}
 export default ValidateInputNumber;
